@@ -3,23 +3,25 @@
  */
 import edit from './edit';
 import save from './save';
+import icon from './icon';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 
 registerBlockType( 'itsamoreh/unsplash-block', {
-	title: __( 'itsamoreh Unsplash Block', 'unsplash-block' ),
-	icon: 'edit',
+	title: __( 'Unsplash Image', 'unsplash-block' ),
+	icon: {
+		src: icon,
+	},
 	category: 'common',
 	keywords: [
 		__( 'itsamoreh', 'unsplash-block' ),
 		__( 'unsplash-block', 'unsplash-block' ),
 	],
 	attributes: {
-		content: {
-			type: 'array',
-			source: 'children',
-			selector: 'p',
+		image: {
+			type: 'string',
+			default: '',
 		},
 	},
 	edit,

@@ -1,22 +1,17 @@
 /**
  * SAVE: itsamoreh Unsplash Block
  */
-import { RichText } from '@wordpress/block-editor';
 
 const Save = ( props ) => {
 	const {
 		attributes: {
-			content,
+			image,
 		},
 		className,
 	} = props;
 
 	return (
-		<RichText.Content
-			className={ className }
-			tagName="p"
-			value={ content }
-		/>
+		<img className={ className } src={ image } alt="" />
 	);
 };
 

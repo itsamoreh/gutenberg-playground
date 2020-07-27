@@ -1,31 +1,45 @@
 /**
  * EDIT: itsamoreh Unsplash Block
  */
-import { RichText } from '@wordpress/block-editor';
-import { __ } from '@wordpress/i18n';
+import Unsplash from 'unsplash-js';
+
+const unsplash = new Unsplash( { accessKey: '' } );
 
 const Edit = ( props ) => {
 	const {
 		attributes: {
-			content,
+			image,
 		},
 		className,
 		setAttributes,
+		isSelected,
 	} = props;
 
-	// Update field content on change.
-	const onChangeContent = ( newContent ) => {
-		setAttributes( { content: newContent } );
+	const getPhoto = () => {
+		unsplash.photos.getRandomPhoto()
+			.then( ( res ) => res.json() )
+			.then( ( json ) => {
+				setAttributes( {
+					image: json.urls.small,
+				} );
+			} );
 	};
 
 	return (
-		<RichText
-			tagName="p"
+		<div
 			className={ className }
-			onChange={ onChangeContent }
-			value={ content }
-			placeholder={ __( 'itsamoreh Unsplash Block Demo...', 'unsplash-block' ) }
-		/>
+		>
+			{
+				isSelected && (
+					<div>
+						<div>UNSPLASH LOGO</div>
+						<input type="text" name="search" placeholder="Query (optional)" /><br />
+						<button onClick={ getPhoto }>Get Image</button>
+					</div>
+				)
+			}
+			<img src={ image } alt="" />
+		</div>
 	);
 };
 
