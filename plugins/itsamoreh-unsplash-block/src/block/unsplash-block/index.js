@@ -23,6 +23,10 @@ registerBlockType( 'itsamoreh/unsplash-block', {
 			type: 'string',
 			default: '',
 		},
+		query: {
+			type: 'string',
+			default: '',
+		},
 	},
 	edit,
 	save,

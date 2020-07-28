@@ -9,6 +9,7 @@
  * Text Domain:     unsplash-block
  *
  * @package         itsamoreh\unsplash-block
+ * @since           0.1.0
  */
 
 namespace itsamoreh\unsplash_block;
@@ -20,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
  * Register the block with WordPress.
  *
  * @author itsamoreh
- * @since 0.0.1
+ * @since 0.1.0
  */
 function register_block() {
 

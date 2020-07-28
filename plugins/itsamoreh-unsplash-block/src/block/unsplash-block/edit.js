@@ -1,6 +1,9 @@
 /**
  * EDIT: itsamoreh Unsplash Block
  */
+
+import logo from './logo';
+
 import Unsplash from 'unsplash-js';
 
 const unsplash = new Unsplash( { accessKey: '' } );
@@ -9,6 +12,7 @@ const Edit = ( props ) => {
 	const {
 		attributes: {
 			image,
+			query,
 		},
 		className,
 		setAttributes,
@@ -31,10 +35,14 @@ const Edit = ( props ) => {
 		>
 			{
 				isSelected && (
-					<div>
-						<div>UNSPLASH LOGO</div>
-						<input type="text" name="search" placeholder="Query (optional)" /><br />
-						<button onClick={ getPhoto }>Get Image</button>
+					<div className="image-select">
+						<div className="logo">
+							{ logo }
+						</div>
+						<div className="image-select-form">
+							<input className="query" type="text" name="query" placeholder="Query (optional)" value={ query } />
+							<button className="button" onClick={ getPhoto }>Get Image</button>
+						</div>
 					</div>
 				)
 			}
