@@ -6,7 +6,7 @@ import logo from './logo';
 
 import Unsplash from 'unsplash-js';
 
-const unsplash = new Unsplash( { accessKey: '' } );
+const { __ } = wp.i18n;
 
 const Edit = ( props ) => {
 	const {
