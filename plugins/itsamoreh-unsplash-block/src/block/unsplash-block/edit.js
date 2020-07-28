@@ -40,8 +40,8 @@ const Edit = ( props ) => {
 							{ logo }
 						</div>
 						<div className="image-select-form">
-							<input className="query" type="text" name="query" placeholder="Query (optional)" value={ query } />
-							<button className="button" onClick={ getPhoto }>Get Image</button>
+							<input className="query" type="text" name="query" placeholder={ __( 'Query (optional)' ) } value={ query } />
+							<button className="button" onClick={ getPhoto }>{ __( 'Get Image' ) }</button>
 						</div>
 					</div>
 				)
